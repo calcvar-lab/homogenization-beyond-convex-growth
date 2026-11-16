@@ -1,0 +1,59 @@
+# Metadata of the Lean formalization accompanying the paper.
+paper:
+  title: "Homogenization of nonconvex unbounded integrals beyond convex growth"
+  authors:
+    - "Omar Anza Hafsa"
+    - "Adel Hachache"
+    - "Mohamed Lamine Leghmizi"
+    - "Jean-Philippe Mandallena"
+  hal: "https://hal.science/hal-05851819"
+
+repository:
+  url: "https://github.com/calcvar-lab/homogenization-beyond-convex-growth"
+  version: "v1.0"      # tag to create at publication
+  visual_paper: "https://calcvar-lab.github.io/homogenization-beyond-convex-growth/visual-paper/"
+
+licenses:
+  visual-paper: "CC-BY-4.0"      # visual-paper/LICENSE; vendor/ keeps the MIT license of KaTeX
+  lean: "Apache-2.0"             # lean/LICENSE, lean/NOTICE
+
+lean:
+  directory: "lean"
+  toolchain: "leanprover/lean4:v4.33.0"
+  mathlib:
+    rev: "v4.33.0"
+    commit: "db584cd6d46c92f209a44c0f1c829460d327499d"
+  build: ["lake exe cache get", "lake build"]
+  axiom_check: "lake env lean scripts/CheckAxioms.lean"
+  allowed_axioms: ["propext", "Classical.choice", "Quot.sound"]
+  sorry_free: true
+  correspondence: "lean/REGISTRY.md"
+
+main_results:
+  - paper: "Theorem main-Ggrowth (Gamma-convergence)"
+    lean: "Homogenization.main_Ggrowth_final_unconditional"
+    file: "lean/Homogenization/AHM14.lean"
+  - paper: "Theorem th:AHM11 ([AHM-Zorgati 2014, Theorem 1.1])"
+    lean: "Homogenization.citedAHM14_holds"
+    file: "lean/Homogenization/AHM14.lean"
+  - paper: "Theorem Vitali-envelope-cite ([oah-cloz-jpm17, Theorem A.16]), with the equality"
+    lean: "Homogenization.citedVitaliEnvelope_holds"
+    file: "lean/Homogenization/VitaliEquality.lean"
+  - paper: "Proposition 2.1(i) of [AHM-Zorgati 2014], local lower bound"
+    lean: "Homogenization.localLowerBound"
+    file: "lean/Homogenization/AHM14.lean"
+  - paper: "Proposition 2.1(ii) of [AHM-Zorgati 2014], Gamma-limsup"
+    lean: "Homogenization.GammaLimsup_le_intHom_radialHp"
+    file: "lean/Homogenization/Recovery.lean"
+  - paper: "Theorem th:product (iii)"
+    lean: "Homogenization.th_product_iii_unconditional"
+    file: "lean/Homogenization/MeasurableYtloc.lean"
+  - paper: "Example ex:sepconcrete (separable integrand)"
+    lean: "Homogenization.sepConcrete_sep_iv"
+    file: "lean/Homogenization/Examples/SepConcrete.lean"
+  - paper: "Proposition prop:separating (iv)"
+    lean: "Homogenization.properDomainWv_sep_iv"
+    file: "lean/Homogenization/Examples/ProperDomainSepIV.lean"
+  - paper: "Proposition prop:properdomain (iv), for the function G_2 given after (DG2)"
+    lean: "Homogenization.properDomainWSharpExample_pd_iv"
+    file: "lean/Homogenization/Examples/ProperDomainSharpIV.lean"

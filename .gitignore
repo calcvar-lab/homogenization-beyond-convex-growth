@@ -1,0 +1,4 @@
+lean/.lake
+.DS_Store
+visual-paper/build/tmp/
+__pycache__/

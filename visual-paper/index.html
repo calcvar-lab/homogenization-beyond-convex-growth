@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beyond Convex Growth — Visual Paper</title>
+<meta name="description" content="Reading edition of “Homogenization of nonconvex unbounded integrals beyond convex growth”: the full text at three depths, previews of every cross-reference, the dependency atlas, the hypotheses (H1)–(H8) across the paper, and the Lean 4 status of each result.">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="css/vp.css">
+<script>
+  /* theme and reading depth before the first paint */
+  (function () {
+    try {
+      var t = JSON.parse(localStorage.getItem("vp2:theme") || "null");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+      var d = JSON.parse(localStorage.getItem("vp2:depth") || "null");
+      document.documentElement.setAttribute("data-depth", d || "outline");
+      var f = JSON.parse(localStorage.getItem("vp2:fs") || "null");
+      if (f) document.documentElement.style.setProperty("--fs", f + "px");
+    } catch (e) { document.documentElement.setAttribute("data-depth", "outline"); }
+  })();
+</script>
+</head>
+<body data-view="text">
+<a class="skip" href="#doc">Skip to the text</a>
+
+<header class="mast" id="mast">
+  <a class="mast-id" href="#/" title="Title page">
+    <span class="mast-kicker">Visual Paper</span>
+    <span class="mast-title">Homogenization beyond convex growth</span>
+  </a>
+
+  <div class="depth" role="group" aria-label="Reading depth" id="depth">
+    <button type="button" aria-pressed="false" data-depth="statements" title="Statements only (key 1)">Statements</button>
+    <button type="button" aria-pressed="false" data-depth="outline" title="Statements and the steps of each proof, with the results each step cites (key 2)">Proof outline</button>
+    <button type="button" aria-pressed="false" data-depth="full" title="The full text (key 3)">Full text</button>
+  </div>
+
+  <nav class="views" aria-label="Views">
+    <a href="#/" data-v="text">Text</a>
+    <a href="#/atlas" data-v="atlas">Atlas</a>
+    <a href="#/hypotheses" data-v="hypotheses">Hypotheses</a>
+    <a href="#/lean" data-v="lean">Lean</a>
+  </nav>
+
+  <div class="mast-tools">
+    <div class="search" id="search">
+      <label class="sr" for="q">Search results, sections, hypotheses and Lean declarations</label>
+      <label class="q-lab" for="q" aria-hidden="true">Search</label>
+      <input id="q" type="search" placeholder="Search  /" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="q-list" aria-autocomplete="list">
+      <div id="q-list" class="q-list" role="listbox" hidden></div>
+    </div>
+    <button type="button" class="tool" id="b-contents" aria-controls="rail" aria-expanded="false" title="Contents">Contents</button>
+    <button type="button" class="tool" id="b-size" title="Text size" aria-label="Text size">Aa</button>
+    <button type="button" class="tool" id="b-theme" title="Light or dark" aria-label="Switch between light and dark">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
+    </button>
+    <button type="button" class="tool" id="b-help" title="Keys (?)" aria-label="Keyboard shortcuts">?</button>
+  </div>
+</header>
+
+<div class="frame" id="frame">
+  <nav class="rail" id="rail" aria-label="Contents"></nav>
+  <main class="stage" id="stage">
+    <article class="doc" id="doc" tabindex="-1"></article>
+    <section class="view" id="v-atlas" hidden aria-label="Dependency atlas"></section>
+    <section class="view" id="v-hypotheses" hidden aria-label="Hypotheses across the paper"></section>
+    <section class="view" id="v-lean" hidden aria-label="Lean formalization"></section>
+  </main>
+</div>
+
+<aside class="peek" id="peek" hidden aria-live="polite" aria-label="Preview of a cross-reference"></aside>
+<button type="button" class="return" id="return" hidden></button>
+<div class="bib" id="bib" role="tooltip" hidden></div>
+
+<dialog class="help" id="help" aria-label="Keyboard shortcuts">
+  <h2>Keys</h2>
+  <dl>
+    <dt>1 2 3</dt><dd>Statements, proof outline, full text</dd>
+    <dt>j k</dt><dd>Next or previous result</dd>
+    <dt>/</dt><dd>Search</dd>
+    <dt>Enter</dt><dd>On a cross-reference: preview it in the margin</dd>
+    <dt>Esc</dt><dd>Close the preview, the search or this panel</dd>
+    <dt>t a h l</dt><dd>Text, atlas, hypotheses, Lean</dd>
+    <dt>f</dt><dd>In the atlas: enlarge to the whole window, or back</dd>
+    <dt>Alt ← →</dt><dd>Back, forward</dd>
+  </dl>
+  <p>A click on a cross-reference shows its target in the margin; “Go to” moves there, and the return
+     button brings the reading position back.</p>
+  <form method="dialog"><button type="submit">Close</button></form>
+</dialog>
+
+<script src="data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/text.js"></script>
+<script src="js/peek.js"></script>
+<script src="js/atlas.js"></script>
+<script src="js/ledgers.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

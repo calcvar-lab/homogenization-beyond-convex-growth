@@ -1,0 +1,16 @@
+Copyright (c) 2026 O. Anza Hafsa, A. Hachache, M. L. Leghmizi, J.-P. Mandallena
+
+The content of this folder (the text of the paper "Homogenization of nonconvex
+unbounded integrals beyond convex growth", its figures, and the interactive
+presentation built from them) is licensed under the Creative Commons Attribution
+4.0 International License (CC BY 4.0).
+
+You are free to share and adapt this material for any purpose, even
+commercially, provided that you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:         https://creativecommons.org/licenses/by/4.0/
+
+The third-party libraries in vendor/ are not covered by this license; they keep
+their own licenses, listed in vendor/THIRD_PARTY_LICENSES (KaTeX: MIT).
